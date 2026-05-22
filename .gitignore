@@ -1,0 +1,6 @@
+# Dev/source files – not part of the live website
+archive/
+
+# OS noise
+Thumbs.db
+.DS_Store

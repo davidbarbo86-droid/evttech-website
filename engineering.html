@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automotive Engineering | EVT Tech Ltd</title>
+  <meta name="description" content="World-class automotive engineering consultancy from Horiba MIRA. RLDA, NVH, ride &amp; handling, durability, instrumentation and EV powertrain testing.">
+  <meta property="og:title" content="Automotive Engineering | EVT Tech Ltd">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://evttech.co.uk/engineering.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Sub-page hero */
+    .hero { height: 62vh; min-height: 420px; }
+    .hero-title { font-size: clamp(2.2rem, 5.5vw, 4.5rem); }
+
+    /* Services grid */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .svc-card {
+      border: 1px solid var(--border-sand);
+      border-radius: 12px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .svc-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      line-height: 1.15;
+    }
+    .svc-card-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .svc-card-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    /* Dewesoft hardware image */
+    .hw-img-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #111;
+      max-width: 480px;
+      margin-top: 1.5rem;
+    }
+    .hw-img-wrap img { display: block; width: 100%; height: auto; }
+    /* Detailed testing services */
+    .test-svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .test-svc-card { border: 1px solid var(--border-sand); border-radius: 10px; padding: 1.25rem 1.4rem; background: var(--white); }
+    .test-svc-card h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--charcoal); margin-bottom: 0.4rem; line-height: 1.2; }
+    .test-svc-card p { font-size: 0.855rem; color: var(--muted); line-height: 1.55; margin: 0; }
+    /* Instrumentation cards */
+    .inst-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+    .inst-card { background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .inst-brand { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); }
+    .inst-model { font-size: 1rem; font-weight: 700; color: var(--white); }
+    .inst-desc { font-size: 0.82rem; color: rgba(245,243,240,0.55); line-height: 1.6; }
+    /* Equipment photo gallery */
+    .equip-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.75rem; margin-top: 2rem; }
+    .equip-photo-item { background: var(--white); border: 1px solid var(--border-sand); border-radius: 8px; overflow: hidden; }
+    .equip-photo-item img { width: 100%; aspect-ratio: 4/3; object-fit: contain; padding: 0.75rem; display: block; }
+    .equip-photo-item-label { padding: 0.4rem 0.65rem 0.6rem; font-size: 0.72rem; color: var(--muted); }
+    .equip-photo-item-brand { display: block; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark); margin-bottom: 0.1rem; }
+    /* Hire items */
+    .hire-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.6rem; margin-top: 1.75rem; }
+    .hire-item { display: flex; align-items: center; gap: 0.65rem; border: 1px solid var(--border-sand); border-radius: 8px; padding: 0.65rem 0.9rem; font-size: 0.875rem; color: var(--mid); background: var(--white); }
+    .hire-item::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--gold-dark); flex-shrink: 0; }
+    /* Why EVT Tech */
+    .why-eng-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .why-eng-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; }
+    .why-eng-num { font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: rgba(252,196,25,0.3); line-height: 1; margin-bottom: 0.5rem; }
+    .why-eng-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; color: var(--white); margin-bottom: 0.4rem; }
+    .why-eng-desc { font-size: 0.875rem; color: rgba(245,243,240,0.5); line-height: 1.65; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="EVT Tech Ltd home">
+        <span class="logo-evt">EVT</span><span class="logo-tech">TECH</span><span class="logo-ltd">LTD</span>
+      </a>
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a href="vehicles.html" role="menuitem">Vehicles</a></li>
+        <li role="none"><a href="engineering.html" role="menuitem" aria-current="page">Engineering</a></li>
+        <li role="none"><a href="battery.html" role="menuitem">Battery</a></li>
+        <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Contact Us</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top" aria-label="Engineering services">
+    <div class="hero-media" aria-hidden="true">
+      <img src="img/slide07_img33.png" alt="" class="hero-img">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <p class="hero-eyebrow">Horiba MIRA &middot; Nuneaton, CV10 0TU</p>
+        <h1 class="hero-title">
+          World&#8209;class<br>
+          automotive<br>
+          testing.
+        </h1>
+        <p class="hero-sub">Expert vehicle development consultancy from the UK&rsquo;s leading test facility.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="arrow-link arrow-link--hero">
+            <span class="arrow-link-label">Discuss a project</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+          <a href="#capabilities" class="arrow-link arrow-link--hero arrow-link--ghost">
+            <span class="arrow-link-label">Our capabilities</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bar" aria-label="Key facts">
+      <div class="container">
+        <dl class="hero-stats">
+          <div class="hstat"><dt class="hstat-label">Facility</dt><dd class="hstat-value">MIRA</dd></div>
+          <div class="hstat"><dt class="hstat-label">Systems</dt><dd class="hstat-value">Dewesoft</dd></div>
+          <div class="hstat"><dt class="hstat-label">Focus</dt><dd class="hstat-value">EV &amp; ICE</dd></div>
+          <div class="hstat"><dt class="hstat-label">Background</dt><dd class="hstat-value">OEM</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="intro-section" aria-label="About our engineering services">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Engineering consultancy</span>
+          <h2 class="display-h">From the team that engineered the Volta Zero.</h2>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <p>EVT Tech Ltd is founded by former Volta Trucks engineering leads with deep experience across full vehicle development cycles &mdash; from concept through to production sign-off. We now offer that expertise to external clients across the full range of automotive testing and development disciplines.</p>
+          <p>Operating from Horiba MIRA &mdash; Europe&rsquo;s most comprehensive automotive test facility &mdash; we have access to world-class test tracks, proving grounds and laboratory facilities, combined with our own state-of-the-art Dewesoft data acquisition systems.</p>
+          <p class="intro-bold">We don&rsquo;t just advise. We test.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="truck-section" id="capabilities" aria-label="Engineering capabilities">
+    <div class="container">
+      <div class="truck-grid">
+
+        <div class="truck-content fade-up">
+          <span class="tag tag--light">Capabilities</span>
+          <h2 class="display-h display-h--light">Full&#8209;spectrum vehicle testing &amp; development.</h2>
+          <p class="truck-intro">Whether you need a single channel of data acquisition or a complete vehicle dynamics programme, our team can deliver. We work across EV and ICE platforms, with particular depth in electric commercial vehicles.</p>
+          <a href="#contact" class="btn-solid">
+            Discuss your project
+            <span class="arrow-circ arrow-circ--gold" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+
+        <div class="truck-visual fade-up" style="--delay:0.2s">
+          <div class="caps-cloud" aria-label="Engineering capabilities list">
+            <span>RLDA</span>
+            <span>NVH Testing</span>
+            <span>Ride &amp; Handling</span>
+            <span>Durability</span>
+            <span>Instrumentation</span>
+            <span>Data Analysis</span>
+            <span>EV Powertrain</span>
+            <span>Homologation Support</span>
+            <span>Dewesoft Systems</span>
+            <span>Tyre Testing</span>
+            <span>Brake Performance</span>
+            <span>Thermal Management</span>
+            <span>Suspension Development</span>
+            <span>Steering &amp; Braking</span>
+            <span>Driver-in-the-Loop</span>
+          </div>
+          <div class="mira-block">
+            <p class="mira-label">Test facility</p>
+            <p class="mira-name">Horiba MIRA</p>
+            <p class="mira-addr">Nuneaton, Warwickshire, CV10 0TU</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
+  <section class="eng-section" id="services" aria-label="Services in detail">
+    <div class="container">
+      <div class="eng-grid">
+
+        <div class="eng-left fade-up">
+          <span class="tag">Instrumentation</span>
+          <h2 class="display-h">Dewesoft-equipped.<br>Channel-ready.</h2>
+          <p>Our team operates Dewesoft SIRIUSi and SBOXe data acquisition platforms &mdash; some of the most capable vehicle instrumentation systems available. From single-channel force measurement to full multi-axle RLDA campaigns, we have the hardware and expertise to deliver.</p>
+          <a href="#contact" class="arrow-link">
+            <span class="arrow-link-label">Talk to us about instrumentation</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+          <div class="hw-img-wrap">
+            <img src="img/slide21_img04.png" alt="Dewesoft SBOXe data acquisition system">
+          </div>
+        </div>
+
+        <div class="eng-right fade-up" style="--delay:0.15s">
+          <div class="svc-grid">
+            <div class="svc-card">
+              <span class="svc-card-tag">Dynamics</span>
+              <span class="svc-card-title">RLDA &amp; Durability</span>
+              <span class="svc-card-desc">Road Load Data Acquisition for fatigue life analysis, endurance testing and load case definition.</span>
+            </div>
+            <div class="svc-card">
+              <span class="svc-card-tag">Acoustics</span>
+              <span class="svc-card-title">NVH Testing</span>
+              <span class="svc-card-desc">Noise, vibration and harshness characterisation across powertrain, driveline and body structure.</span>
+            </div>
+            <div class="svc-card">
+              <span class="svc-card-tag">Chassis</span>
+              <span class="svc-card-title">Ride &amp; Handling</span>
+              <span class="svc-card-desc">Objective and subjective assessment of vehicle dynamics. Suspension, steering and braking development.</span>
+            </div>
+            <div class="svc-card">
+              <span class="svc-card-tag">Thermal</span>
+              <span class="svc-card-title">Thermal Management</span>
+              <span class="svc-card-desc">EV battery, motor and power electronics thermal characterisation and system validation.</span>
+            </div>
+            <div class="svc-card">
+              <span class="svc-card-tag">Compliance</span>
+              <span class="svc-card-title">Homologation Support</span>
+              <span class="svc-card-desc">Technical support for type approval, regulatory sign-off and certification programmes.</span>
+            </div>
+            <div class="svc-card">
+              <span class="svc-card-tag">Tyres</span>
+              <span class="svc-card-title">Tyre &amp; Brake Testing</span>
+              <span class="svc-card-desc">Tyre performance characterisation, rolling resistance measurement and brake system evaluation.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILED TESTING SERVICES -->
+  <section class="intro-section" aria-label="Detailed testing services">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Testing services</span>
+          <h2 class="display-h">The full range of vehicle attribute testing.</h2>
+          <p>From a single measurement campaign to a full development programme &mdash; we deliver rigorous, well-documented results with actionable analysis across every vehicle attribute discipline.</p>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <div class="test-svc-grid">
+            <div class="test-svc-card"><h4>Benchmarking</h4><p>Subjective and objective benchmarking against target competitors with structured scoring and attribute gap analysis.</p></div>
+            <div class="test-svc-card"><h4>Energy Consumption &mdash; xEV</h4><p>Full xEV system energy consumption measurement including charging efficiency, regen recovery and drive cycle analysis.</p></div>
+            <div class="test-svc-card"><h4>Driveability &amp; Optimisation</h4><p>Tip-in/tip-out, creep, launch and pedal feel characterisation with calibration optimisation support.</p></div>
+            <div class="test-svc-card"><h4>Longitudinal Performance</h4><p>0&ndash;60, overtaking, gradeability and top speed measurement with full instrumented data capture.</p></div>
+            <div class="test-svc-card"><h4>Ride &mdash; Wheel Rates &amp; Dampers</h4><p>Corner weight, wheel rate, damper bench characterisation and on-vehicle correlation to target ride performance.</p></div>
+            <div class="test-svc-card"><h4>Handling</h4><p>Double lane change, steady-state cornering, step steer and transient handling assessment to ISO standards.</p></div>
+            <div class="test-svc-card"><h4>Steering &amp; Turning Circle</h4><p>Static and dynamic steering effort, lock-to-lock characterisation and minimum turning circle assessment.</p></div>
+            <div class="test-svc-card"><h4>Brake Performance</h4><p>Stopping distance, brake fade assessment and regenerative braking performance and feel evaluation.</p></div>
+            <div class="test-svc-card"><h4>Road Load Data Acquisition</h4><p>Full RLDA campaigns on customer or representative routes with QA and delivery in customer-specified formats.</p></div>
+            <div class="test-svc-card"><h4>RLDA to Accelerated Test</h4><p>Rainflow counting, damage equivalence and rig programme development from RLDA data sets.</p></div>
+            <div class="test-svc-card"><h4>Accelerated Durability</h4><p>Accelerated durability route development and management, alongside rig-based durability programme support.</p></div>
+            <div class="test-svc-card"><h4>HET / CET</h4><p>Hot and cold environment testing programme management and execution for thermal and HVAC systems.</p></div>
+            <div class="test-svc-card"><h4>Ergonomics &amp; Occupant Comfort</h4><p>Reach and vision analysis, WBV measurement and occupant comfort subjective evaluation.</p></div>
+            <div class="test-svc-card"><h4>Wind Tunnel Testing</h4><p>Aerodynamic drag, lift and cross-wind sensitivity with correlation to road-based coast-down testing.</p></div>
+            <div class="test-svc-card"><h4>HMI &amp; UI Assessment</h4><p>Driver HMI usability, display legibility, control intuitiveness and driver workload assessment.</p></div>
+            <div class="test-svc-card"><h4>NVH</h4><p>In-cabin and exterior NVH measurement, source-path-receiver analysis and pass-by noise assessment.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOFTWARE & SYSTEMS -->
+  <section class="bat-section" aria-label="Software and systems">
+    <div class="container">
+      <div class="eng-grid">
+        <div class="eng-left fade-up">
+          <span class="tag tag--light">Software &amp; Systems</span>
+          <h2 class="display-h display-h--light">Embedded systems &amp; software validation.</h2>
+          <p>From HIL and SIL testing through to fleet data monitoring and charging system validation &mdash; our team covers the full embedded software development and validation cycle.</p>
+        </div>
+        <div class="eng-right fade-up" style="--delay:0.15s">
+          <div class="svc-grid" style="margin-top:0;">
+            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+              <span class="svc-card-tag">Hardware</span>
+              <span class="svc-card-title" style="color:var(--white);">HIL Testing</span>
+              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Hardware-in-the-loop testing for VCUs and ECUs in a repeatable, safe test environment.</span>
+            </div>
+            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+              <span class="svc-card-tag">Software</span>
+              <span class="svc-card-title" style="color:var(--white);">SIL Testing</span>
+              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Software-in-the-loop validation supporting early sign-off before physical hardware is available.</span>
+            </div>
+            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+              <span class="svc-card-tag">Verification</span>
+              <span class="svc-card-title" style="color:var(--white);">Functionality Sign-off</span>
+              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Structured functional verification against requirements &mdash; traceable, documented and auditable.</span>
+            </div>
+            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+              <span class="svc-card-tag">Diagnostics</span>
+              <span class="svc-card-title" style="color:var(--white);">Software Troubleshooting</span>
+              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Root cause investigation using CAN, LIN and Ethernet diagnostic tools.</span>
+            </div>
+            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+              <span class="svc-card-tag">Fleet</span>
+              <span class="svc-card-title" style="color:var(--white);">Fleet Data Monitoring</span>
+              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Telematics-based monitoring, anomaly detection and diagnostic data interpretation for connected vehicle fleets.</span>
+            </div>
+            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+              <span class="svc-card-tag">EV</span>
+              <span class="svc-card-title" style="color:var(--white);">Charging &amp; Energy</span>
+              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Charging performance evaluation, on-board charging system validation and range optimisation.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUMENTATION -->
+  <section class="eng-section" id="instrumentation" aria-label="Instrumentation inventory">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Instrumentation</span>
+          <h2 class="display-h">Professional equipment inventory.<br>Owned in-house.</h2>
+          <p>We operate a professional instrumentation suite &mdash; owned and maintained in-house &mdash; enabling rapid mobilisation without third-party hire lead times or additional cost to your programme.</p>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <div class="inst-grid">
+            <div class="inst-card"><span class="inst-brand">Dewesoft</span><span class="inst-model">SBOXe</span><span class="inst-desc">Multi-channel DAQ for vibration, strain and dynamic measurement. Used for RLDA, NVH and durability campaigns.</span></div>
+            <div class="inst-card"><span class="inst-brand">Dewesoft</span><span class="inst-model">SIRIUSe LV+</span><span class="inst-desc">High-accuracy low-voltage data acquisition. Ideal for voltage, current and temperature monitoring across EV systems.</span></div>
+            <div class="inst-card"><span class="inst-brand">Dewesoft</span><span class="inst-model">SIRIUSe STGS / STGM+</span><span class="inst-desc">High-channel-count strain gauge acquisition for structural load measurement and fatigue data collection.</span></div>
+            <div class="inst-card"><span class="inst-brand">Dewesoft</span><span class="inst-model">SIRIUS x48 BNC (NVH)</span><span class="inst-desc">48-channel NVH data acquisition for comprehensive in-cabin, exterior and structural noise &amp; vibration testing.</span></div>
+            <div class="inst-card"><span class="inst-brand">Dewesoft</span><span class="inst-model">Krypton</span><span class="inst-desc">Distributed DAQ system for high-channel-count structural testing with modular, location-flexible deployment.</span></div>
+            <div class="inst-card"><span class="inst-brand">Kistler</span><span class="inst-model">MSW DT1</span><span class="inst-desc">Non-contact optical velocity sensor for precise vehicle speed measurement during braking, performance and handling tests.</span></div>
+            <div class="inst-card"><span class="inst-brand">Tinytag</span><span class="inst-model">Energy Logger TGE-001</span><span class="inst-desc">Compact energy monitoring data logger for long-duration electrical consumption measurement across vehicle systems.</span></div>
+            <div class="inst-card"><span class="inst-brand">Intrepid Control Systems</span><span class="inst-model">ION / RED2 CAN Logger</span><span class="inst-desc">Professional CAN bus data logging and vehicle network analysis for embedded software diagnostics and fleet monitoring.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <p class="tag" style="margin-bottom:1rem;">Equipment gallery</p>
+        <div class="equip-gallery" aria-label="Instrumentation product photos">
+          <div class="equip-photo-item"><img src="img/slide13_img03.png" alt="Dewesoft SBOXe DAQ unit" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">Dewesoft</span>SBOXe DAQ system</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img05.png" alt="Kistler MSW DT1 optical sensor" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">Kistler</span>MSW DT1 optical sensor</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img06.png" alt="Intrepid RED2 CAN logger" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">Intrepid</span>RED2 CAN logger</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img07.png" alt="Dewesoft SIRIUS NVH unit" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">Dewesoft</span>SIRIUS NVH unit</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img08.png" alt="HeadAcoustics binaural head microphone" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">HeadAcoustics</span>Binaural head mic</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img09.png" alt="HeadAcoustics SQuadriga III recorder" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">HeadAcoustics</span>SQuadriga III</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img10.png" alt="PCB modal shaker and amplifier" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">PCB</span>Modal shaker</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img11.png" alt="PCB 3-axis accelerometer" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">PCB</span>3-axis accelerometer</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img12.png" alt="IMF flowmeter" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">IMF</span>Flowmeter</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img13.png" alt="Dewesoft DS-DISP-12 display" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">Dewesoft</span>DS-DISP-12 display</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img14.png" alt="AK Industries string pot" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">AK Industries</span>String pot sensor</div></div>
+          <div class="equip-photo-item"><img src="img/slide13_img15.png" alt="Dewesoft current clamp" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">Dewesoft</span>Current clamp</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUMENTS FOR HIRE -->
+  <section class="intro-section" id="hire" aria-label="Instruments for hire">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Available for hire</span>
+          <h2 class="display-h">Need equipment for your own programme?</h2>
+          <p>We offer short and long-term hire of our professional instrumentation inventory &mdash; ideal for campaigns that need specific sensors at short notice without purchasing outright.</p>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <div class="hire-grid" role="list" aria-label="Equipment available for hire">
+            <div class="hire-item" role="listitem">Kistler S Motion system</div>
+            <div class="hire-item" role="listitem">Kistler Steering Wheel &amp; Brackets</div>
+            <div class="hire-item" role="listitem">Kistler Wheel Force Transducer</div>
+            <div class="hire-item" role="listitem">2D 3-axis Gyro</div>
+            <div class="hire-item" role="listitem">HeadAcoustics Artificial Head (binaural)</div>
+            <div class="hire-item" role="listitem">HeadAcoustics SQuadriga III recorder</div>
+            <div class="hire-item" role="listitem">PCB Modal Shaker Kits</div>
+            <div class="hire-item" role="listitem">PCB Instrumented Hammers</div>
+            <div class="hire-item" role="listitem">PCB Microphones</div>
+            <div class="hire-item" role="listitem">PCB 1AX / 3AX Accelerometers</div>
+            <div class="hire-item" role="listitem">Dewesoft GPS Sync 20 Hz</div>
+            <div class="hire-item" role="listitem">Racelogic VBOX GPS Sensor VBS25</div>
+            <div class="hire-item" role="listitem">IMF Flowmeters</div>
+            <div class="hire-item" role="listitem">Dewesoft DS CAN-2 interface</div>
+            <div class="hire-item" role="listitem">Dewesoft / Pico Current Clamps</div>
+            <div class="hire-item" role="listitem">Dewesoft Display DS-DISP-12 &amp; Mounts</div>
+            <div class="hire-item" role="listitem">AK Industries String Pots</div>
+            <div class="hire-item" role="listitem">Pedal Effort Load Cell &amp; Pedal Switch</div>
+            <div class="hire-item" role="listitem">RS Pro Pressure Transducers</div>
+            <div class="hire-item" role="listitem">Telemecanique Ultrasonic Height Sensors</div>
+            <div class="hire-item" role="listitem">SICK Rotary Encoders</div>
+          </div>
+          <p style="margin-top:1.25rem;font-size:0.85rem;color:var(--muted);">Not an exhaustive list &mdash; <a href="#contact" style="color:var(--gold-dark);">get in touch</a> if you need something specific.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EVT TECH -->
+  <section class="truck-section" aria-label="Why EVT Tech for engineering">
+    <div class="container">
+      <div class="fade-up">
+        <span class="tag tag--light">Why EVT Tech</span>
+        <h2 class="display-h display-h--light" style="max-width:600px;margin-top:0.5rem;">Turn-key solutions. OEM rigour.</h2>
+        <p class="truck-intro">We don&rsquo;t just provide equipment &mdash; we deliver complete test programmes with expert engineers, dedicated instrumentation and full data analysis and reporting.</p>
+      </div>
+      <div class="why-eng-grid fade-up" style="--delay:0.15s">
+        <div class="why-eng-card">
+          <div class="why-eng-num">01</div>
+          <div class="why-eng-title">OEM pedigree</div>
+          <p class="why-eng-desc">Our team spent years developing the Volta Zero as a full OEM organisation &mdash; bringing rigorous programme management, technical depth and genuine EV-native expertise.</p>
+        </div>
+        <div class="why-eng-card">
+          <div class="why-eng-num">02</div>
+          <div class="why-eng-title">MIRA access</div>
+          <p class="why-eng-desc">Working from Horiba MIRA gives clients direct access to UK automotive test facilities &mdash; proving grounds, NVH suites, wind tunnel and more &mdash; without the overhead.</p>
+        </div>
+        <div class="why-eng-card">
+          <div class="why-eng-num">03</div>
+          <div class="why-eng-title">Owned instrumentation</div>
+          <p class="why-eng-desc">Our in-house Dewesoft, Kistler and Intrepid equipment means rapid mobilisation and no third-party hire costs or lead times impacting your programme schedule.</p>
+        </div>
+        <div class="why-eng-card">
+          <div class="why-eng-num">04</div>
+          <div class="why-eng-title">Flexible engagement</div>
+          <p class="why-eng-desc">From a single test event to a multi-year development programme &mdash; we work to your timescale and budget, embedding with your team or operating fully independently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left fade-up">
+          <span class="tag tag--light">Get in touch</span>
+          <h2 class="display-h display-h--light">Tell us about your project.</h2>
+          <p class="contact-sub">Whether you need a day of instrumentation support or a multi-month vehicle development programme, our team at Horiba MIRA can help. Let&rsquo;s talk.</p>
+        </div>
+        <div class="contact-right fade-up" style="--delay:0.15s">
+          <div class="contact-details">
+            <div class="cdetail">
+              <span class="cdetail-label">Location</span>
+              <span class="cdetail-value">Horiba MIRA, Nuneaton<br>CV10 0TU, UK</span>
+            </div>
+            <div class="cdetail">
+              <span class="cdetail-label">Email</span>
+              <a href="mailto:info@evttech.co.uk" class="cdetail-value cdetail-link">info@evttech.co.uk</a>
+            </div>
+            <div class="cdetail">
+              <span class="cdetail-label">Web</span>
+              <a href="https://evttech.co.uk" class="cdetail-value cdetail-link">evttech.co.uk</a>
+            </div>
+          </div>
+          <a href="mailto:info@evttech.co.uk" class="btn-outline">
+            Send us an email
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="nav-logo footer-brand" aria-label="EVT Tech Ltd home">
+          <span class="logo-evt">EVT</span><span class="logo-tech">TECH</span><span class="logo-ltd">LTD</span>
+        </a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="vehicles.html">Vehicles</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="battery.html">Battery Solutions</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-addr">Horiba MIRA &middot; Nuneaton &middot; CV10 0TU &middot; United Kingdom</p>
+        <p class="footer-copy">&copy; 2026 EVT Tech Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

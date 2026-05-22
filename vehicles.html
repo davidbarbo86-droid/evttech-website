@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volta Zero Vehicles | EVT Tech Ltd</title>
+  <meta name="description" content="Volta Zero 16-tonne electric truck for sale, lease or rental from EVT Tech Ltd — supplied directly by the OEM engineering team at Horiba MIRA.">
+  <meta property="og:title" content="Volta Zero Vehicles | EVT Tech Ltd">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://evttech.co.uk/vehicles.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Sub-page hero */
+    .hero { height: 62vh; min-height: 420px; }
+    .hero-title { font-size: clamp(2.2rem, 5.5vw, 4.5rem); }
+
+    /* Acquisition cards */
+    .acq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .acq-card {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .acq-num {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .acq-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .acq-desc {
+      font-size: 0.875rem;
+      color: rgba(245,243,240,0.55);
+      line-height: 1.65;
+    }
+    @media (max-width: 860px) { .acq-grid { grid-template-columns: 1fr; } }
+
+    /* Dimension drawing inset */
+    .dim-img-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+    }
+    .dim-img-wrap img { display: block; width: 100%; height: auto; }
+    /* Cabin features */
+    .cabin-feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1.75rem; }
+    .cabin-feat-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 1px solid var(--border-sand); border-radius: 10px; background: var(--white); }
+    .cabin-feat-num { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--gold); color: var(--navy); font-size: 0.65rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .cabin-feat-text { font-size: 0.875rem; color: var(--charcoal); line-height: 1.4; }
+    /* Standard equipment */
+    .eq-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.75rem; }
+    .eq-group { border: 1px solid var(--border-sand); border-radius: 12px; padding: 1.5rem 1.75rem; background: var(--white); }
+    .eq-group-h { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-dark); margin-bottom: 0.85rem; }
+    .eq-group ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    .eq-group ul li { font-size: 0.875rem; color: var(--mid); line-height: 1.5; padding-left: 1.1rem; position: relative; }
+    .eq-group ul li::before { content: ''; position: absolute; left: 0; top: 0.56em; width: 4px; height: 4px; border-radius: 50%; background: var(--gold-dark); }
+    /* Vehicle highlights */
+    .hl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+    .hl-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .hl-icon { font-size: 1.75rem; }
+    .hl-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; color: var(--white); line-height: 1.1; }
+    .hl-desc { font-size: 0.875rem; color: rgba(245,243,240,0.5); line-height: 1.65; }
+    /* Trial ratings */
+    .ratings-row { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-top: 2rem; }
+    .rating-cell { text-align: center; min-width: 120px; }
+    .rating-score { font-family: var(--font-display); font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .rating-score sup { font-size: 1rem; color: rgba(245,243,240,0.4); font-weight: 400; }
+    .rating-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.35rem; }
+    @media (max-width: 640px) { .eq-cols { grid-template-columns: 1fr; } }
+    /* Spec group headers */
+    .spec-gh { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin: 1.25rem 0 0.35rem; padding-bottom: 0.3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .spec-gh:first-child { margin-top: 0; }
+    /* Cargo box dimensions */
+    .box-dims { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+    .box-dim-group { border: 1px solid var(--border-sand); border-radius: 12px; padding: 1.25rem 1.5rem; background: var(--white); }
+    .box-dim-h { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-dark); margin-bottom: 0.85rem; }
+    .box-dim-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; padding: 0.3rem 0; border-bottom: 1px solid var(--border-sand); font-size: 0.82rem; }
+    .box-dim-row:last-child { border-bottom: none; }
+    .box-dim-n { color: var(--mid); }
+    .box-dim-v { font-weight: 600; color: var(--charcoal); white-space: nowrap; }
+    @media (max-width: 860px) { .box-dims { grid-template-columns: 1fr; } }
+    /* Pilot efficiency table */
+    .eff-table-wrap { overflow-x: auto; margin-top: 1.75rem; }
+    .eff-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    .eff-table th { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); padding: 0.6rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.15); text-align: left; white-space: nowrap; }
+    .eff-table td { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(245,243,240,0.8); white-space: nowrap; }
+    .eff-table tr:last-child td { border-bottom: none; font-weight: 600; color: var(--gold); }
+    .eff-table td:first-child { color: var(--white); font-weight: 600; }
+    .eff-note { font-size: 0.75rem; color: rgba(245,243,240,0.4); margin-top: 1rem; line-height: 1.6; }
+
+    /* Photo → sketch crossfade.
+       Container locked to photo's natural ratio (763:500 = 1.526).
+       Photo fills container exactly (no crop).
+       Sketch (1.768) fills height, overflows ~8% each side —
+       the main truck body stays centred and fully visible.
+       Both trucks fill ~93-97% of container height at the same scale. */
+    .spec-photo-fade {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 763/500;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    }
+    .spec-photo-base,
+    .spec-photo-top {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    .spec-photo-top {
+      transition: opacity 0.08s linear;
+    }
+    /* Override .truck-section overflow:hidden so sticky child works */
+    #specs { overflow: visible; }
+    /* Sticky right column so image stays in view while spec list scrolls */
+    #specs .truck-visual {
+      position: sticky;
+      top: calc(80px + 2rem);
+      align-self: start;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="EVT Tech Ltd home">
+        <span class="logo-evt">EVT</span><span class="logo-tech">TECH</span><span class="logo-ltd">LTD</span>
+      </a>
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a href="vehicles.html" role="menuitem" aria-current="page">Vehicles</a></li>
+        <li role="none"><a href="engineering.html" role="menuitem">Engineering</a></li>
+        <li role="none"><a href="battery.html" role="menuitem">Battery</a></li>
+        <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Contact Us</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top" aria-label="Volta Zero vehicles">
+    <div class="hero-media" aria-hidden="true">
+      <img src="img/slide07_img33.png" alt="" class="hero-img">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <p class="hero-eyebrow">Volta Zero &middot; 16-tonne electric truck</p>
+        <h1 class="hero-title">
+          For sale,<br>
+          lease<br>
+          &amp; rental.
+        </h1>
+        <p class="hero-sub">Supplied directly by the OEM engineering team at Horiba MIRA.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="arrow-link arrow-link--hero">
+            <span class="arrow-link-label">Enquire today</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+          <a href="#specs" class="arrow-link arrow-link--hero arrow-link--ghost">
+            <span class="arrow-link-label">Full specification</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bar" aria-label="Key specifications">
+      <div class="container">
+        <dl class="hero-stats">
+          <div class="hstat"><dt class="hstat-label">GVW</dt><dd class="hstat-value">16&ndash;18t</dd></div>
+          <div class="hstat"><dt class="hstat-label">Max payload</dt><dd class="hstat-value">8,500 kg</dd></div>
+          <div class="hstat"><dt class="hstat-label">Max range</dt><dd class="hstat-value">280 km</dd></div>
+          <div class="hstat"><dt class="hstat-label">Battery (usable)</dt><dd class="hstat-value">150&ndash;225 kWh</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL SPECIFICATION -->
+  <section class="truck-section" id="specs" aria-label="Full specification">
+    <div class="container">
+      <div class="truck-grid">
+
+        <div class="truck-content fade-up">
+          <span class="tag tag--light">Volta Zero</span>
+          <h2 class="display-h display-h--light">The world&rsquo;s first purpose&#8209;built 16&#8209;tonne electric truck.</h2>
+          <p class="truck-intro">Designed from the ground up for urban delivery. Not a conversion &mdash; a purpose-built electric platform engineered for zero direct emissions, maximum driver visibility and low total cost of operation.</p>
+          <p class="spec-gh">Powertrain &amp; Performance</p>
+          <dl class="specs">
+            <div class="spec-row"><dt class="spec-n">Propulsion</dt><dd class="spec-v">Electric rear axle, 250 kW, with regen</dd></div>
+            <div class="spec-row"><dt class="spec-n">Max speed</dt><dd class="spec-v">90 km/h (56 mph)</dd></div>
+            <div class="spec-row"><dt class="spec-n">Range &mdash; Standard</dt><dd class="spec-v">200 km (124 mi)</dd></div>
+            <div class="spec-row"><dt class="spec-n">Range &mdash; Long Range</dt><dd class="spec-v">280 km (174 mi)</dd></div>
+            <div class="spec-row"><dt class="spec-n">Battery &mdash; Standard</dt><dd class="spec-v">164 kWh gross / 150 kWh usable</dd></div>
+            <div class="spec-row"><dt class="spec-n">Battery &mdash; Long Range</dt><dd class="spec-v">246 kWh gross / 225 kWh usable</dd></div>
+          </dl>
+          <p class="spec-gh">Dimensions</p>
+          <dl class="specs">
+            <div class="spec-row"><dt class="spec-n">Total length</dt><dd class="spec-v">9,252 mm</dd></div>
+            <div class="spec-row"><dt class="spec-n">Total width</dt><dd class="spec-v">2,550 mm (2,819 mm incl. cameras)</dd></div>
+            <div class="spec-row"><dt class="spec-n">Height &mdash; standard roof</dt><dd class="spec-v">3,302 mm</dd></div>
+            <div class="spec-row"><dt class="spec-n">Height &mdash; low roof</dt><dd class="spec-v">3,193 mm</dd></div>
+            <div class="spec-row"><dt class="spec-n">Wheelbase</dt><dd class="spec-v">4,800 mm</dd></div>
+            <div class="spec-row"><dt class="spec-n">Turning circle (kerb&ndash;kerb)</dt><dd class="spec-v">15.8 m</dd></div>
+          </dl>
+          <p class="spec-gh">Weights &amp; Axles</p>
+          <dl class="specs">
+            <div class="spec-row"><dt class="spec-n">GVW</dt><dd class="spec-v">16,000 / 18,000 kg</dd></div>
+            <div class="spec-row"><dt class="spec-n">Front axle capacity</dt><dd class="spec-v">6,500 / 7,650 kg</dd></div>
+            <div class="spec-row"><dt class="spec-n">Rear axle capacity</dt><dd class="spec-v">10,500 / 11,500 kg</dd></div>
+            <div class="spec-row"><dt class="spec-n">Kerb weight &mdash; Standard Range</dt><dd class="spec-v">6,500 kg</dd></div>
+            <div class="spec-row"><dt class="spec-n">Kerb weight &mdash; Long Range</dt><dd class="spec-v">6,975 kg</dd></div>
+            <div class="spec-row"><dt class="spec-n">Kerb weight fully built (unladen)</dt><dd class="spec-v">9,500 kg (with box &amp; tail lift)</dd></div>
+          </dl>
+          <p class="spec-gh">Cabin &amp; Body</p>
+          <dl class="specs">
+            <div class="spec-row"><dt class="spec-n">Seats</dt><dd class="spec-v">3</dd></div>
+            <div class="spec-row"><dt class="spec-n">Driver position</dt><dd class="spec-v">Central</dd></div>
+            <div class="spec-row"><dt class="spec-n">Direct vision rating</dt><dd class="spec-v">220&deg; &mdash; 5 stars (TfL)</dd></div>
+            <div class="spec-row"><dt class="spec-n">Tail lift</dt><dd class="spec-v">Dhollandia 2.0T Slider / Cantilever</dd></div>
+          </dl>
+          <a href="#contact" class="btn-solid">
+            Enquire about availability
+            <span class="arrow-circ arrow-circ--gold" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+
+        <div class="truck-visual fade-up" style="--delay:0.2s">
+          <div class="spec-photo-fade">
+            <!-- Bottom: engineering sketch -->
+            <img class="spec-photo-base" src="img/volta_front_sketch.png" alt="" aria-hidden="true">
+            <!-- Top: real photo, fades out when section scrolls into view -->
+            <img class="spec-photo-top" id="specPhotoTop" src="img/volta-front.jpg" alt="Volta Zero electric truck">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CARGO BOX DIMENSIONS -->
+  <section class="intro-section" id="body-dims" aria-label="Cargo box dimensions">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Body dimensions</span>
+          <h2 class="display-h">Cargo box &amp; door apertures.</h2>
+          <div class="box-dims" style="grid-template-columns:1fr;margin-top:1.5rem;">
+            <div class="box-dim-group">
+              <p class="box-dim-h">External</p>
+              <div class="box-dim-row"><span class="box-dim-n">Box length (overall)</span><span class="box-dim-v">7,082 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Box width</span><span class="box-dim-v">2,550 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Box height (over frame rail)</span><span class="box-dim-v">2,549 mm</span></div>
+            </div>
+            <div class="box-dim-group">
+              <p class="box-dim-h">Internal</p>
+              <div class="box-dim-row"><span class="box-dim-n">Floor length</span><span class="box-dim-v">6,860 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Width at floor</span><span class="box-dim-v">2,445 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Max height</span><span class="box-dim-v">2,242 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Cargo floor height</span><span class="box-dim-v">1,202 mm <span style="font-weight:400;color:var(--muted);font-size:0.78em;">(range 1,122&ndash;1,302)</span></span></div>
+            </div>
+            <div class="box-dim-group">
+              <p class="box-dim-h">Door Apertures</p>
+              <div class="box-dim-row"><span class="box-dim-n">Rear height &mdash; roller shutter</span><span class="box-dim-v">2,014 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Rear height &mdash; barn door</span><span class="box-dim-v">2,017 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Rear width &mdash; roller shutter</span><span class="box-dim-v">2,340 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Rear width &mdash; barn door</span><span class="box-dim-v">2,341 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Side door height</span><span class="box-dim-v">1,850 mm</span></div>
+              <div class="box-dim-row"><span class="box-dim-n">Side door width</span><span class="box-dim-v">1,115 mm</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <!-- phantom spacer: mirrors the tag + h2 on the left to align photos with the dimension boxes -->
+          <span class="tag" aria-hidden="true" style="visibility:hidden;">Body dimensions</span>
+          <h2 class="display-h" aria-hidden="true" style="visibility:hidden;">Cargo box &amp; door apertures.</h2>
+          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--mid);margin-bottom:0.6rem;">Side profile &mdash; 9,252 mm</p>
+          <img src="img/slide05_img01.png" alt="Volta Zero side view &mdash; 9,252 mm total length" style="width:100%;border-radius:8px;border:1px solid var(--border-sand);background:#fff;padding:0.75rem;box-sizing:border-box;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:0.75rem;">
+            <div>
+              <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--mid);margin-bottom:0.4rem;">Front &mdash; 2,819 mm</p>
+              <img src="img/slide05_img02.png" alt="Volta Zero front view &mdash; 2,819 mm wide" style="width:100%;border-radius:8px;border:1px solid var(--border-sand);background:#fff;padding:0.75rem;box-sizing:border-box;">
+            </div>
+            <div>
+              <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--mid);margin-bottom:0.4rem;">Rear &mdash; 2,550 mm</p>
+              <img src="img/slide05_img03.png" alt="Volta Zero rear view &mdash; 2,550 mm wide" style="width:100%;border-radius:8px;border:1px solid var(--border-sand);background:#fff;padding:0.75rem;box-sizing:border-box;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET AVAILABILITY -->
+  <section class="bat-section" aria-label="Fleet availability">
+    <div class="container">
+      <div class="bat-grid">
+        <div class="bat-stat fade-up" aria-label="25 trucks in fleet">
+          <span class="bat-num">25</span>
+          <span class="bat-unit">trucks</span>
+          <span class="bat-sub">in our fleet</span>
+        </div>
+        <div class="bat-content fade-up" style="--delay:0.15s">
+          <span class="tag tag--light">Stock available now</span>
+          <h2 class="display-h display-h--light">Vehicles in stock.<br>Ready to deploy.</h2>
+          <p class="bat-desc">EVT Tech holds a fleet of 25 Volta Zero trucks. Seven are fully registered and available immediately. A further 10&ndash;12 can be registered to meet your timescale. All vehicles are maintained and supported from our workshop at Horiba MIRA.</p>
+          <div class="bat-features">
+            <div class="bat-feat">
+              <span class="bat-feat-title">7 registered</span>
+              <span class="bat-feat-desc">Ready to drive away immediately</span>
+            </div>
+            <div class="bat-feat">
+              <span class="bat-feat-title">10&ndash;12 unregistered</span>
+              <span class="bat-feat-desc">Registerable to your timescale</span>
+            </div>
+            <div class="bat-feat">
+              <span class="bat-feat-title">All MIRA-based</span>
+              <span class="bat-feat-desc">Maintained &amp; supported from our workshop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACQUISITION OPTIONS -->
+  <section class="intro-section" aria-label="Acquisition options">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Flexible acquisition</span>
+          <h2 class="display-h">Buy, lease or rent &mdash; structured around your fleet.</h2>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <p>Whether you&rsquo;re ready to commit to ownership, want the flexibility of a lease, or need a vehicle for a trial or peak-demand period, EVT Tech can accommodate. Every option is backed by OEM engineering expertise and direct support from Horiba MIRA.</p>
+          <div class="acq-grid">
+            <div class="acq-card">
+              <span class="acq-num">01</span>
+              <span class="acq-title">Outright Purchase</span>
+              <span class="acq-desc">Full OEM documentation, vehicle history and ongoing engineering support included as standard.</span>
+            </div>
+            <div class="acq-card">
+              <span class="acq-num">02</span>
+              <span class="acq-title">Finance Lease</span>
+              <span class="acq-desc">Spread the cost while maintaining operational control. Terms structured around your requirements.</span>
+            </div>
+            <div class="acq-card">
+              <span class="acq-num">03</span>
+              <span class="acq-title">Short&#8209;term Rental</span>
+              <span class="acq-desc">Ideal for pilots, project cover or peak demand. Flexible durations with delivery and support included.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY EVT TECH -->
+  <section class="eng-section" aria-label="Why EVT Tech">
+    <div class="container">
+      <div class="eng-grid">
+        <div class="eng-left fade-up">
+          <span class="tag">OEM provenance</span>
+          <h2 class="display-h">We built the Volta Zero.<br>We support it too.</h2>
+          <p>Buying from EVT Tech means buying from the engineers who designed, validated and built every system on the vehicle. No intermediaries, no guesswork &mdash; just deep OEM knowledge and a full support capability at MIRA.</p>
+          <a href="#contact" class="arrow-link">
+            <span class="arrow-link-label">Discuss your requirements</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+        <div class="eng-right fade-up" style="--delay:0.15s">
+          <div class="caps-cloud" aria-label="Support capabilities">
+            <span>OEM diagnostics</span>
+            <span>Full vehicle history</span>
+            <span>Genuine parts supply</span>
+            <span>Battery state-of-health</span>
+            <span>Software &amp; firmware</span>
+            <span>Pre-delivery inspection</span>
+            <span>Driver familiarisation</span>
+            <span>Charging consultancy</span>
+            <span>Fault code analysis</span>
+            <span>Warranty support</span>
+          </div>
+          <div class="mira-block">
+            <p class="mira-label">Our base</p>
+            <p class="mira-name">Horiba MIRA</p>
+            <p class="mira-addr">Nuneaton, Warwickshire, CV10 0TU</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CABIN & DRIVER FEATURES -->
+  <section class="eng-section" aria-label="Cabin and driver features">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Driver experience</span>
+          <h2 class="display-h">Designed around the driver.</h2>
+          <p>The Volta Zero cabin was rethought from zero &mdash; panoramic visibility, car-like comfort and 220&deg; direct vision as standard. Central driving position puts the driver in full control of every urban junction.</p>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <div class="cabin-feat-grid" role="list" aria-label="Standard cabin features">
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">1</div><span class="cabin-feat-text">Integrated tachograph</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">2</div><span class="cabin-feat-text">Interior mood lighting</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">3</div><span class="cabin-feat-text">Rear-view camera</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">4</div><span class="cabin-feat-text">380 mm mirror display</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">5</div><span class="cabin-feat-text">4-speaker audio system</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">6</div><span class="cabin-feat-text">Dual 260 mm touch screens</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">7</div><span class="cabin-feat-text">FM &amp; DAB radio</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">8</div><span class="cabin-feat-text">Dual front wipers</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">9</div><span class="cabin-feat-text">310 mm instrument cluster</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">10</div><span class="cabin-feat-text">Driver airbag</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">11</div><span class="cabin-feat-text">Heated windscreen</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">12</div><span class="cabin-feat-text">USB charging ports</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">13</div><span class="cabin-feat-text">Low entry step</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">14</div><span class="cabin-feat-text">Heated &amp; air-ventilated seat</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">15</div><span class="cabin-feat-text">220&deg; panoramic vision</span></div>
+            <div class="cabin-feat-item" role="listitem"><div class="cabin-feat-num" aria-hidden="true">16</div><span class="cabin-feat-text">Cabin recorder (optional)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDARD EQUIPMENT -->
+  <section class="intro-section" aria-label="Standard equipment">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Standard equipment</span>
+          <h2 class="display-h">Full specification.<br>No exceptions.</h2>
+          <p>Every Volta Zero in the EVT Tech fleet includes the complete standard equipment list from Volta Trucks. No stripped-out spec vehicles.</p>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <div class="eq-cols">
+            <div class="eq-group">
+              <p class="eq-group-h">Cabin</p>
+              <ul>
+                <li>Low entry &amp; walkthrough cabin</li>
+                <li>Sliding doors</li>
+                <li>Driver airbag</li>
+                <li>Heated windscreen</li>
+                <li>Heated seat / ventilated / air-suspended</li>
+                <li>Heated steering wheel</li>
+                <li>Air conditioning</li>
+                <li>Electronic parking brake with auto hold &amp; hill hold</li>
+                <li>Touch screen vehicle controls</li>
+              </ul>
+            </div>
+            <div class="eq-group">
+              <p class="eq-group-h">Safety &amp; Security</p>
+              <ul>
+                <li>Rear-view cameras (interior and side)</li>
+                <li>360&deg; camera with optional recording</li>
+                <li>Front and rear parking sensors</li>
+                <li>Reversing camera</li>
+                <li>Direct vision 220&deg;, 5-star (TfL)</li>
+                <li>Bi-LED dipped and main beam auto headlamps</li>
+                <li>Payload weight monitoring</li>
+                <li>NFC key card</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEHICLE HIGHLIGHTS -->
+  <section class="truck-section" aria-label="Design highlights">
+    <div class="container">
+      <div class="fade-up">
+        <span class="tag tag--light">Designed from zero</span>
+        <h2 class="display-h display-h--light" style="max-width:600px;margin-top:0.5rem;">A complete rethink of the truck.</h2>
+        <p class="truck-intro">By removing the combustion engine, Volta were free to rethink everything from first principles &mdash; safety, driver wellbeing and urban compatibility.</p>
+      </div>
+      <div class="hl-grid fade-up" style="--delay:0.15s">
+        <div class="hl-card">
+          <span class="hl-icon" aria-hidden="true">&#128065;&#65039;</span>
+          <span class="hl-title">Panoramic Visibility</span>
+          <p class="hl-desc">Central driving position and 220&deg; panoramic windscreen gives class-leading visibility of pedestrians, cyclists and vulnerable road users.</p>
+        </div>
+        <div class="hl-card">
+          <span class="hl-icon" aria-hidden="true">&#129681;</span>
+          <span class="hl-title">Driver-Centric Cabin</span>
+          <p class="hl-desc">Bright, spacious, car-like interior designed around driver comfort and welfare. Dramatically reduced NVH versus diesel trucks.</p>
+        </div>
+        <div class="hl-card">
+          <span class="hl-icon" aria-hidden="true">&#127807;</span>
+          <span class="hl-title">Zero Tailpipe Emissions</span>
+          <p class="hl-desc">100% electric powertrain. Compliant with all UK Clean Air Zones and ULEZ restrictions. Built for cities committed to zero-emission urban freight.</p>
+        </div>
+        <div class="hl-card">
+          <span class="hl-icon" aria-hidden="true">&#127961;&#65039;</span>
+          <span class="hl-title">Built for Urban Distribution</span>
+          <p class="hl-desc">Every dimension, turning circle and access feature was designed around last-mile city-centre delivery &mdash; not adapted from a motorway truck.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER TRIAL RATINGS -->
+  <section class="eng-section" aria-label="Customer trial ratings">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Customer evidence</span>
+          <h2 class="display-h">Proven in live operation.</h2>
+          <p>The Volta Zero has been through extensive customer pilot programmes across the UK and Europe. Scores captured anonymously during live evaluations 2024&ndash;2025.</p>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <div class="ratings-row">
+            <div class="rating-cell">
+              <div class="rating-score">4.4<sup>&thinsp;/5</sup></div>
+              <div class="rating-label">Cabin Accessibility</div>
+            </div>
+            <div class="rating-cell">
+              <div class="rating-score">4.2<sup>&thinsp;/5</sup></div>
+              <div class="rating-label">Manoeuvrability</div>
+            </div>
+            <div class="rating-cell">
+              <div class="rating-score">4.2<sup>&thinsp;/5</sup></div>
+              <div class="rating-label">Cabin Visibility</div>
+            </div>
+            <div class="rating-cell">
+              <div class="rating-score">4.6<sup>&thinsp;/5</sup></div>
+              <div class="rating-label">Vehicle Braking</div>
+            </div>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:1.5rem;">Captured anonymously during live customer pilot evaluations &middot; 2024&ndash;2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILOT EFFICIENCY DATA -->
+  <section class="bat-section" id="efficiency" aria-label="Real-world efficiency data">
+    <div class="container">
+      <div class="bat-grid">
+        <div class="bat-stat fade-up" aria-label="252 km average range">
+          <span class="bat-num">252</span>
+          <span class="bat-unit">km</span>
+          <span class="bat-sub">fleet average range</span>
+        </div>
+        <div class="bat-content fade-up" style="--delay:0.15s">
+          <span class="tag tag--light">Real-world data</span>
+          <h2 class="display-h display-h--light">Live pilot results.<br>UK &amp; Austria, 2024&ndash;2025.</h2>
+          <p class="bat-desc">The following data was captured during structured live pilot operations. UK programme ran October 2024 to February 2025. Austrian programme ran February to March 2025. All figures on road &mdash; not simulated or laboratory-derived.</p>
+          <div class="eff-table-wrap">
+            <table class="eff-table" aria-label="UK pilot efficiency data by load">
+              <thead>
+                <tr>
+                  <th>Loading</th>
+                  <th>Total kWh</th>
+                  <th>Total km</th>
+                  <th>Efficiency</th>
+                  <th>Max range (est.)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Unladen</td>
+                  <td>5,566 kWh</td>
+                  <td>8,237 km</td>
+                  <td>0.676 kWh/km</td>
+                  <td>284.9 km</td>
+                </tr>
+                <tr>
+                  <td>16T (loaded)</td>
+                  <td>4,297 kWh</td>
+                  <td>5,001 km</td>
+                  <td>0.859 kWh/km</td>
+                  <td>224.1 km</td>
+                </tr>
+                <tr>
+                  <td>18T (loaded)</td>
+                  <td>2,120 kWh</td>
+                  <td>2,450 km</td>
+                  <td>0.865 kWh/km</td>
+                  <td>222.5 km</td>
+                </tr>
+                <tr>
+                  <td>Combined total</td>
+                  <td>11,983 kWh</td>
+                  <td>15,688 km</td>
+                  <td>0.764 kWh/km</td>
+                  <td>252.0 km</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="eff-note">UK pilot programme, October 2024 &ndash; February 2025. Max range estimate based on Long Range battery pack (225 kWh usable) at observed efficiency per load category. Austrian programme (February &ndash; March 2025) data not included in table above.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left fade-up">
+          <span class="tag tag--light">Get in touch</span>
+          <h2 class="display-h display-h--light">Ready to add the Volta Zero to your fleet?</h2>
+          <p class="contact-sub">Speak directly with the engineers who built the truck. We&rsquo;ll discuss your operational profile, range requirements and the right acquisition structure for your business.</p>
+        </div>
+        <div class="contact-right fade-up" style="--delay:0.15s">
+          <div class="contact-details">
+            <div class="cdetail">
+              <span class="cdetail-label">Location</span>
+              <span class="cdetail-value">Horiba MIRA, Nuneaton<br>CV10 0TU, UK</span>
+            </div>
+            <div class="cdetail">
+              <span class="cdetail-label">Email</span>
+              <a href="mailto:info@evttech.co.uk" class="cdetail-value cdetail-link">info@evttech.co.uk</a>
+            </div>
+            <div class="cdetail">
+              <span class="cdetail-label">Web</span>
+              <a href="https://evttech.co.uk" class="cdetail-value cdetail-link">evttech.co.uk</a>
+            </div>
+          </div>
+          <a href="mailto:info@evttech.co.uk" class="btn-outline">
+            Send us an email
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="nav-logo footer-brand" aria-label="EVT Tech Ltd home">
+          <span class="logo-evt">EVT</span><span class="logo-tech">TECH</span><span class="logo-ltd">LTD</span>
+        </a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="vehicles.html">Vehicles</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="battery.html">Battery Solutions</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-addr">Horiba MIRA &middot; Nuneaton &middot; CV10 0TU &middot; United Kingdom</p>
+        <p class="footer-copy">&copy; 2026 EVT Tech Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
