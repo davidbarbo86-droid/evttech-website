@@ -193,12 +193,23 @@ ul { list-style: none; }
   left: 0;
   right: 0;
   z-index: 100;
-  transition: background var(--ease), box-shadow var(--ease);
+  transition: box-shadow var(--ease);
 }
-.nav.scrolled {
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(248, 246, 241, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity var(--ease);
+}
+.nav.scrolled::before {
+  opacity: 1;
+}
+.nav.scrolled {
   box-shadow: 0 1px 0 var(--border-sand);
 }
 
@@ -909,7 +920,7 @@ ul { list-style: none; }
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 
   .truck-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .truck-visual { min-height: 320px; }
+  .truck-visual { min-height: 320px; padding: 1.75rem; }
 
   .bat-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .bat-stat { flex-direction: row; align-items: baseline; gap: 0.5rem; padding-top: 0; }
@@ -942,7 +953,10 @@ ul { list-style: none; }
     z-index: 99;
   }
   .nav-links.open { display: flex; }
+  .nav-links.open li { width: 100%; }
+  .nav-links.open li:last-child { margin-top: 2rem; }
   .nav-links.open a {
+    display: block;
     font-size: 1.15rem;
     color: var(--light) !important;
     padding: 0.8rem 0;
@@ -950,7 +964,6 @@ ul { list-style: none; }
     width: 100%;
   }
   .nav-links.open .nav-cta {
-    margin-top: 1rem;
     border-radius: 100px;
     background: var(--gold) !important;
     color: var(--navy) !important;
@@ -965,9 +978,21 @@ ul { list-style: none; }
   .footer-top { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
   .footer-nav { flex-wrap: wrap; gap: 0.75rem 1.25rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+
+  /* Reduce section padding and visual noise on mobile */
+  :root { --section-pad: 4rem; }
+  .display-h { font-size: clamp(1.9rem, 6.5vw, 2.4rem); }
+  .stile-inner { min-height: auto; }
+  .truck-visual { padding: 1.25rem; min-height: 220px; }
+  .spec-row { flex-wrap: wrap; gap: 0.15rem 0; }
+  .spec-v { flex-shrink: 0; }
 }
 
 @media (max-width: 480px) {
+  :root { --section-pad: 2.5rem; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
+  .hstat { padding: 0 0.65rem; }
+  .hstat-value { font-size: 1.3rem; }
+  .bat-num { font-size: clamp(3rem, 12vw, 5rem); }
 }

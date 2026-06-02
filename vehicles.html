@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <style>
     /* Sub-page hero */
-    .hero { height: 62vh; min-height: 420px; }
+    .hero { min-height: max(62vh, 520px); }
     .hero-title { font-size: clamp(2.2rem, 5.5vw, 4.5rem); }
 
     /* Acquisition cards */
@@ -104,6 +104,8 @@
     /* Pilot efficiency table */
     .eff-table-wrap { overflow-x: auto; margin-top: 1.75rem; }
     .eff-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    /* Prevent table from expanding its grid container wider than viewport on mobile */
+    .bat-section .bat-content { min-width: 0; }
     .eff-table th { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); padding: 0.6rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.15); text-align: left; white-space: nowrap; }
     .eff-table td { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(245,243,240,0.8); white-space: nowrap; }
     .eff-table tr:last-child td { border-bottom: none; font-weight: 600; color: var(--gold); }
@@ -141,6 +143,15 @@
       position: sticky;
       top: calc(80px + 2rem);
       align-self: start;
+    }
+    /* On mobile (stacked grid): disable sticky, show photo above spec list */
+    @media (max-width: 1100px) {
+      #specs { overflow: hidden; }
+      #specs .truck-visual {
+        position: static;
+        align-self: auto;
+        order: -1;
+      }
     }
   </style>
 </head>
