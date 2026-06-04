@@ -261,8 +261,10 @@ ul { list-style: none; }
   transition: color var(--ease);
 }
 .nav-links a:hover { color: var(--light); }
+.nav-links a[aria-current="page"] { color: var(--gold); font-weight: 600; }
 .nav.scrolled .nav-links a { color: var(--mid); }
 .nav.scrolled .nav-links a:hover { color: var(--charcoal); }
+.nav.scrolled .nav-links a[aria-current="page"] { color: var(--gold-dark); }
 
 .nav-links .nav-cta {
   background: var(--gold);
