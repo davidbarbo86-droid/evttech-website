@@ -89,6 +89,12 @@
     .why-eng-num { font-family: var(--font-display); font-size: 2rem; font-weight: 900; color: rgba(252,196,25,0.3); line-height: 1; margin-bottom: 0.5rem; }
     .why-eng-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; color: var(--white); margin-bottom: 0.4rem; }
     .why-eng-desc { font-size: 0.875rem; color: rgba(245,243,240,0.5); line-height: 1.65; }
+
+    /* test-svc-cards on dark (truck-section) background */
+    .truck-section .test-svc-card { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); }
+    .truck-section .test-svc-card h4 { color: var(--white); }
+    .truck-section .test-svc-card p { color: rgba(245,243,240,0.55); }
+    .truck-section .intro-grid p { color: rgba(245,243,240,0.75); }
   </style>
 </head>
 <body>
@@ -100,9 +106,7 @@
         <span class="logo-evt">EVT</span><span class="logo-tech">TECH</span><span class="logo-ltd">LTD</span>
       </a>
       <ul class="nav-links" id="navLinks" role="menubar">
-        <li role="none"><a href="vehicles.html" role="menuitem">Vehicles</a></li>
         <li role="none"><a href="engineering.html" role="menuitem" aria-current="page">Engineering</a></li>
-        <li role="none"><a href="battery.html" role="menuitem">Battery</a></li>
         <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Contact Us</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
@@ -159,8 +163,8 @@
           <h2 class="display-h">From the team that engineered the Volta Zero.</h2>
         </div>
         <div class="intro-right fade-up" style="--delay:0.15s">
-          <p>EVT Tech Ltd is founded by former Volta Trucks engineering leads with deep experience across full vehicle development cycles &mdash; from concept through to production sign-off. We now offer that expertise to external clients across the full range of automotive testing and development disciplines.</p>
-          <p>Operating from Horiba MIRA &mdash; Europe&rsquo;s most comprehensive automotive test facility &mdash; we have access to world-class test tracks, proving grounds and laboratory facilities, combined with our own state-of-the-art Dewesoft data acquisition systems.</p>
+          <p>EVT Tech Ltd is founded by former Volta Trucks engineering leads who have been involved in the ground-up design, development, validation and certification of the Volta Zero since 2020 &mdash; covering mechanical, electrical, software, test &amp; development, and diagnostics. We now offer that expertise to external clients across the full range of automotive testing and development disciplines.</p>
+          <p>Following the acquisition of all UK Volta Trucks assets &mdash; including workshop and test equipment &mdash; we operate from our own development workshop at Horiba MIRA alongside direct access to Europe&rsquo;s most comprehensive automotive test facility. Our team also actively supports remote CAN logging and diagnostics of the Volta Zero fleet operating in Europe.</p>
           <p class="intro-bold">We don&rsquo;t just advise. We test.</p>
         </div>
       </div>
@@ -211,70 +215,36 @@
     </div>
   </section>
 
-  <!-- SERVICES DETAIL -->
-  <section class="eng-section" id="services" aria-label="Services in detail">
+  <!-- DESIGN & PROTOTYPING -->
+  <section class="intro-section" id="design" aria-label="Design and prototyping">
     <div class="container">
-      <div class="eng-grid">
-
-        <div class="eng-left fade-up">
-          <span class="tag">Instrumentation</span>
-          <h2 class="display-h">Dewesoft-equipped.<br>Channel-ready.</h2>
-          <p>Our team operates Dewesoft SIRIUSi and SBOXe data acquisition platforms &mdash; some of the most capable vehicle instrumentation systems available. From single-channel force measurement to full multi-axle RLDA campaigns, we have the hardware and expertise to deliver.</p>
-          <a href="#contact" class="arrow-link">
-            <span class="arrow-link-label">Talk to us about instrumentation</span>
-            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
-          </a>
-          <div class="hw-img-wrap">
-            <img src="img/slide21_img04.png" alt="Dewesoft SBOXe data acquisition system">
+      <div class="intro-grid">
+        <div class="intro-left fade-up">
+          <span class="tag">Design &amp; Prototyping</span>
+          <h2 class="display-h">From concept to prototype.</h2>
+          <p>Beyond testing, our team delivers engineering design and prototyping support across the full vehicle development cycle &mdash; from early CAD concept through to physical prototype builds and embedded software development.</p>
+        </div>
+        <div class="intro-right fade-up" style="--delay:0.15s">
+          <div class="test-svc-grid">
+            <div class="test-svc-card"><h4>3D CAD &mdash; Solidworks</h4><p>Concept studies, system packaging, detailed part design and 2D drawing production with GD&amp;T. Ergonomics and occupant packaging analysis.</p></div>
+            <div class="test-svc-card"><h4>CAE Simulation &mdash; Ansys</h4><p>Structural FEA (linear and non-linear), modal analysis and fatigue prediction. Simulation-led design optimisation before physical build.</p></div>
+            <div class="test-svc-card"><h4>Prototype Fabrication</h4><p>In-house metal fabrication including painted prototypes, rapid prototype casting support and 3D-printed components for early-stage design validation.</p></div>
+            <div class="test-svc-card"><h4>Vehicle Builds &amp; Modifications</h4><p>Full prototype and mule vehicle builds and modifications, managed from our own workshop at Horiba MIRA.</p></div>
+            <div class="test-svc-card"><h4>Embedded Software Development</h4><p>Prototype and mule embedded software development using Simulink and Raptor-Dev &mdash; from early concept through to integration and sign-off.</p></div>
+            <div class="test-svc-card"><h4>Vehicle Systems Packaging</h4><p>3D packaging studies for powertrain, battery, thermal and chassis systems within vehicle architecture constraints.</p></div>
           </div>
         </div>
-
-        <div class="eng-right fade-up" style="--delay:0.15s">
-          <div class="svc-grid">
-            <div class="svc-card">
-              <span class="svc-card-tag">Dynamics</span>
-              <span class="svc-card-title">RLDA &amp; Durability</span>
-              <span class="svc-card-desc">Road Load Data Acquisition for fatigue life analysis, endurance testing and load case definition.</span>
-            </div>
-            <div class="svc-card">
-              <span class="svc-card-tag">Acoustics</span>
-              <span class="svc-card-title">NVH Testing</span>
-              <span class="svc-card-desc">Noise, vibration and harshness characterisation across powertrain, driveline and body structure.</span>
-            </div>
-            <div class="svc-card">
-              <span class="svc-card-tag">Chassis</span>
-              <span class="svc-card-title">Ride &amp; Handling</span>
-              <span class="svc-card-desc">Objective and subjective assessment of vehicle dynamics. Suspension, steering and braking development.</span>
-            </div>
-            <div class="svc-card">
-              <span class="svc-card-tag">Thermal</span>
-              <span class="svc-card-title">Thermal Management</span>
-              <span class="svc-card-desc">EV battery, motor and power electronics thermal characterisation and system validation.</span>
-            </div>
-            <div class="svc-card">
-              <span class="svc-card-tag">Compliance</span>
-              <span class="svc-card-title">Homologation Support</span>
-              <span class="svc-card-desc">Technical support for type approval, regulatory sign-off and certification programmes.</span>
-            </div>
-            <div class="svc-card">
-              <span class="svc-card-tag">Tyres</span>
-              <span class="svc-card-title">Tyre &amp; Brake Testing</span>
-              <span class="svc-card-desc">Tyre performance characterisation, rolling resistance measurement and brake system evaluation.</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- DETAILED TESTING SERVICES -->
-  <section class="intro-section" aria-label="Detailed testing services">
+  <section class="truck-section" aria-label="Detailed testing services">
     <div class="container">
       <div class="intro-grid">
         <div class="intro-left fade-up">
-          <span class="tag">Testing services</span>
-          <h2 class="display-h">The full range of vehicle attribute testing.</h2>
+          <span class="tag tag--light">Testing services</span>
+          <h2 class="display-h display-h--light">The full range of vehicle attribute testing.</h2>
           <p>From a single measurement campaign to a full development programme &mdash; we deliver rigorous, well-documented results with actionable analysis across every vehicle attribute discipline.</p>
         </div>
         <div class="intro-right fade-up" style="--delay:0.15s">
@@ -302,45 +272,60 @@
   </section>
 
   <!-- SOFTWARE & SYSTEMS -->
-  <section class="bat-section" aria-label="Software and systems">
+  <section class="intro-section" aria-label="Software and systems">
     <div class="container">
       <div class="eng-grid">
         <div class="eng-left fade-up">
-          <span class="tag tag--light">Software &amp; Systems</span>
-          <h2 class="display-h display-h--light">Embedded systems &amp; software validation.</h2>
+          <span class="tag">Software &amp; Systems</span>
+          <h2 class="display-h">Embedded systems &amp; software validation.</h2>
           <p>From HIL and SIL testing through to fleet data monitoring and charging system validation &mdash; our team covers the full embedded software development and validation cycle.</p>
         </div>
         <div class="eng-right fade-up" style="--delay:0.15s">
           <div class="svc-grid" style="margin-top:0;">
-            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+            <div class="svc-card" style="">
+              <span class="svc-card-tag">MBSE</span>
+              <span class="svc-card-title" style="">Model Based Systems Engineering</span>
+              <span class="svc-card-desc" style="">Systems architecture and requirements management using Enterprise Architect, CAPELLA and PREEvision.</span>
+            </div>
+            <div class="svc-card" style="">
+              <span class="svc-card-tag">Simulation</span>
+              <span class="svc-card-title" style="">Model in the Loop (MiL)</span>
+              <span class="svc-card-desc" style="">Early-stage software validation in a simulated environment using Matlab Simulink and New Eagle RCM 112, before any physical hardware is required.</span>
+            </div>
+            <div class="svc-card" style="">
               <span class="svc-card-tag">Hardware</span>
-              <span class="svc-card-title" style="color:var(--white);">HIL Testing</span>
-              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Hardware-in-the-loop testing for VCUs and ECUs in a repeatable, safe test environment.</span>
+              <span class="svc-card-title" style="">HIL Testing</span>
+              <span class="svc-card-desc" style="">Hardware-in-the-loop testing for VCUs and ECUs using the dSPACE SCALEXIO toolchain (LabBox &amp; AutoBox) in a repeatable, safe test environment.</span>
             </div>
-            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+            <div class="svc-card" style="">
               <span class="svc-card-tag">Software</span>
-              <span class="svc-card-title" style="color:var(--white);">SIL Testing</span>
-              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Software-in-the-loop validation supporting early sign-off before physical hardware is available.</span>
+              <span class="svc-card-title" style="">SIL Testing</span>
+              <span class="svc-card-desc" style="">Software-in-the-loop validation supporting early sign-off before physical hardware is available.</span>
             </div>
-            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+            <div class="svc-card" style="">
+              <span class="svc-card-tag">Vector</span>
+              <span class="svc-card-title" style="">Network Analysis &amp; Testing</span>
+              <span class="svc-card-desc" style="">CAN/LIN/Ethernet network analysis and automated testing using CANalyzer, CANoe and Vtest Studio.</span>
+            </div>
+            <div class="svc-card" style="">
               <span class="svc-card-tag">Verification</span>
-              <span class="svc-card-title" style="color:var(--white);">Functionality Sign-off</span>
-              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Structured functional verification against requirements &mdash; traceable, documented and auditable.</span>
+              <span class="svc-card-title" style="">Functionality Sign-off</span>
+              <span class="svc-card-desc" style="">Structured functional verification against requirements &mdash; traceable, documented and auditable.</span>
             </div>
-            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+            <div class="svc-card" style="">
               <span class="svc-card-tag">Diagnostics</span>
-              <span class="svc-card-title" style="color:var(--white);">Software Troubleshooting</span>
-              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Root cause investigation using CAN, LIN and Ethernet diagnostic tools.</span>
+              <span class="svc-card-title" style="">Software Troubleshooting</span>
+              <span class="svc-card-desc" style="">Root cause investigation using CAN, LIN and Ethernet diagnostic tools.</span>
             </div>
-            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+            <div class="svc-card" style="">
               <span class="svc-card-tag">Fleet</span>
-              <span class="svc-card-title" style="color:var(--white);">Fleet Data Monitoring</span>
-              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Telematics-based monitoring, anomaly detection and diagnostic data interpretation for connected vehicle fleets.</span>
+              <span class="svc-card-title" style="">Fleet Data Monitoring</span>
+              <span class="svc-card-desc" style="">Telematics-based monitoring, anomaly detection and diagnostic data interpretation for connected vehicle fleets.</span>
             </div>
-            <div class="svc-card" style="border-color:rgba(255,255,255,0.1);background:var(--navy-mid);">
+            <div class="svc-card" style="">
               <span class="svc-card-tag">EV</span>
-              <span class="svc-card-title" style="color:var(--white);">Charging &amp; Energy</span>
-              <span class="svc-card-desc" style="color:rgba(245,243,240,0.5);">Charging performance evaluation, on-board charging system validation and range optimisation.</span>
+              <span class="svc-card-title" style="">Charging &amp; Energy</span>
+              <span class="svc-card-desc" style="">Charging performance evaluation, on-board charging system validation and range optimisation.</span>
             </div>
           </div>
         </div>
@@ -349,13 +334,17 @@
   </section>
 
   <!-- INSTRUMENTATION -->
-  <section class="eng-section" id="instrumentation" aria-label="Instrumentation inventory">
+  <section class="bat-section" id="instrumentation" aria-label="Instrumentation inventory">
     <div class="container">
       <div class="intro-grid">
         <div class="intro-left fade-up">
-          <span class="tag">Instrumentation</span>
-          <h2 class="display-h">Professional equipment inventory.<br>Owned in-house.</h2>
-          <p>We operate a professional instrumentation suite &mdash; owned and maintained in-house &mdash; enabling rapid mobilisation without third-party hire lead times or additional cost to your programme.</p>
+          <span class="tag tag--light">Instrumentation</span>
+          <h2 class="display-h display-h--light">Professional equipment inventory.<br>Owned in-house.</h2>
+          <p style="color:rgba(245,243,240,0.75);">Our primary data acquisition platform is Dewesoft &mdash; operating SIRIUSe and SBOXe systems, covering everything from single-channel EV monitoring to full multi-axle RLDA campaigns. All equipment is owned and maintained in-house, enabling rapid mobilisation without third-party hire lead times or additional cost to your programme.</p>
+          <a href="#contact" class="arrow-link arrow-link--light">
+            <span class="arrow-link-label">Talk to us about instrumentation</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
         </div>
         <div class="intro-right fade-up" style="--delay:0.15s">
           <div class="inst-grid">
@@ -367,12 +356,13 @@
             <div class="inst-card"><span class="inst-brand">Kistler</span><span class="inst-model">MSW DT1</span><span class="inst-desc">Non-contact optical velocity sensor for precise vehicle speed measurement during braking, performance and handling tests.</span></div>
             <div class="inst-card"><span class="inst-brand">Tinytag</span><span class="inst-model">Energy Logger TGE-001</span><span class="inst-desc">Compact energy monitoring data logger for long-duration electrical consumption measurement across vehicle systems.</span></div>
             <div class="inst-card"><span class="inst-brand">Intrepid Control Systems</span><span class="inst-model">ION / RED2 CAN Logger</span><span class="inst-desc">Professional CAN bus data logging and vehicle network analysis for embedded software diagnostics and fleet monitoring.</span></div>
+            <div class="inst-card"><span class="inst-brand">CAN EDGE</span><span class="inst-model">CAN EDGE Logger</span><span class="inst-desc">Compact, standalone CAN bus logger for remote and long-duration fleet data acquisition campaigns.</span></div>
           </div>
         </div>
       </div>
 
       <div style="margin-top:3rem;">
-        <p class="tag" style="margin-bottom:1rem;">Equipment gallery</p>
+        <p class="tag tag--light" style="margin-bottom:1rem;">Equipment gallery</p>
         <div class="equip-gallery" aria-label="Instrumentation product photos">
           <div class="equip-photo-item"><img src="img/slide13_img03.png" alt="Dewesoft SBOXe DAQ unit" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">Dewesoft</span>SBOXe DAQ system</div></div>
           <div class="equip-photo-item"><img src="img/slide13_img05.png" alt="Kistler MSW DT1 optical sensor" loading="lazy"><div class="equip-photo-item-label"><span class="equip-photo-item-brand">Kistler</span>MSW DT1 optical sensor</div></div>
@@ -504,9 +494,7 @@
           <span class="logo-evt">EVT</span><span class="logo-tech">TECH</span><span class="logo-ltd">LTD</span>
         </a>
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="vehicles.html">Vehicles</a>
           <a href="engineering.html">Engineering</a>
-          <a href="battery.html">Battery Solutions</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
