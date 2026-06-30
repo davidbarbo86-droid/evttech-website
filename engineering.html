@@ -105,6 +105,9 @@
     @media (max-width: 820px) {
       .how-grid { grid-template-columns: 1fr !important; }
     }
+    @media (max-width: 700px) {
+      .work-grid { grid-template-columns: 1fr !important; }
+    }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
   </style>
@@ -272,8 +275,10 @@
       </div>
 
       <div class="tab-panel" id="tab-software" role="tabpanel">
-        <p style="max-width:640px;margin-bottom:2rem;color:var(--muted);">From HIL and SIL testing through to fleet data monitoring and charging system validation &mdash; our team covers the full embedded software development and validation cycle.</p>
+        <p style="max-width:640px;margin-bottom:2rem;color:var(--muted);">We have developed complete vehicle control software in-house &mdash; from systems architecture through to HIL validation and sign-off &mdash; covering the full embedded software development cycle to recognised functional-safety guidelines and engineering best practice.</p>
         <div class="test-svc-grid">
+          <div class="test-svc-card"><h4>In-house Control Software</h4><p>Ground-up development of vehicle control, body control and vehicle safety module software for a production electric commercial vehicle &mdash; architecture, implementation and integration.</p></div>
+          <div class="test-svc-card"><h4>Functional Safety &amp; Best Practice</h4><p>Development to recognised functional-safety guidelines and automotive best practice, with requirements traceability and structured, auditable sign-off.</p></div>
           <div class="test-svc-card"><h4>Model Based Systems Engineering</h4><p>Systems architecture and requirements management using Enterprise Architect, CAPELLA and PREEvision.</p></div>
           <div class="test-svc-card"><h4>MiL / SIL Simulation</h4><p>Model-in-the-Loop and Software-in-the-Loop validation from early simulation through to pre-hardware sign-off, using Matlab Simulink and New Eagle RCM 112.</p></div>
           <div class="test-svc-card"><h4>HIL Testing</h4><p>Hardware-in-the-loop testing for VCUs and ECUs using the dSPACE SCALEXIO toolchain (LabBox &amp; AutoBox) in a repeatable, safe test environment.</p></div>
@@ -362,8 +367,47 @@
   </section>
 
 
+  <!-- SELECTED WORK -->
+  <section class="intro-section" id="selected-work" aria-label="Selected work">
+    <div class="container">
+      <div class="fade-up">
+        <span class="tag">Selected work</span>
+        <h2 class="display-h" style="max-width:600px;margin-top:0.5rem;">Delivered, not theoretical.</h2>
+        <p style="color:var(--muted);max-width:680px;">A snapshot of programmes our team has delivered &mdash; on the Volta Zero and for external clients across the UK, Europe and the US.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem;" class="work-grid fade-up">
+
+        <div class="work-card" style="border:1px solid var(--border-sand);border-radius:12px;padding:1.75rem;background:var(--white);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dark);">Telematics &amp; Data</span>
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--charcoal);line-height:1.15;margin:0.5rem 0;">Fleet telematics &amp; data acquisition</h3>
+          <p style="font-size:0.875rem;color:var(--muted);line-height:1.65;margin:0;">Designed and implemented live tracking and data acquisition across the Volta Zero fleet &mdash; turning raw vehicle data into efficiency and performance reporting for operators.</p>
+        </div>
+
+        <div class="work-card" style="border:1px solid var(--border-sand);border-radius:12px;padding:1.75rem;background:var(--white);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dark);">Software &amp; Certification</span>
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--charcoal);line-height:1.15;margin:0.5rem 0;">Vehicle software uplift &amp; certification</h3>
+          <p style="font-size:0.875rem;color:var(--muted);line-height:1.65;margin:0;">Delivered a vehicle software uplift, commissioning and certification programme in Germany &mdash; managing the work from development through to compliance sign-off.</p>
+        </div>
+
+        <div class="work-card" style="border:1px solid var(--border-sand);border-radius:12px;padding:1.75rem;background:var(--white);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dark);">Pilot Support</span>
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--charcoal);line-height:1.15;margin:0.5rem 0;">Customer pilot testing support</h3>
+          <p style="font-size:0.875rem;color:var(--muted);line-height:1.65;margin:0;">On-the-ground engineering support for customer pilot programmes across Germany, Denmark and Sweden &mdash; with further UK trials coming soon. Real-world data capture, fault resolution and reporting.</p>
+        </div>
+
+        <div class="work-card" style="border:1px solid var(--border-sand);border-radius:12px;padding:1.75rem;background:var(--white);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dark);">Diagnostics</span>
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--charcoal);line-height:1.15;margin:0.5rem 0;">Volta Zero diagnostic support</h3>
+          <p style="font-size:0.875rem;color:var(--muted);line-height:1.65;margin:0;">Ongoing OEM-level diagnostic support for existing Volta Zero operators &mdash; remote CAN logging, fault investigation and resolution to keep fleets running.</p>
+        </div>
+
+      </div>
+      <p class="fade-up" style="margin-top:1.5rem;font-size:0.875rem;color:var(--muted);max-width:680px;">Alongside further engineering and supply engagements with clients in the UK, Germany and the US across diagnostics, drivetrain and vehicle support.</p>
+    </div>
+  </section>
+
   <!-- WHY EVT TECH -->
-  <section class="intro-section" aria-label="Why EVT Tech for engineering">
+  <section class="intro-section" style="padding-top:0;" aria-label="Why EVT Tech for engineering">
     <div class="container">
       <div class="fade-up">
         <span class="tag">Why EVT Tech</span>
