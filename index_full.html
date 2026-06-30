@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVT Tech Ltd | Engineering · Vehicles · Battery Solutions</title>
+  <meta name="description" content="EVT Tech Ltd — ex-Volta Trucks engineers operating from Horiba MIRA. Vehicle testing consultancy, Volta Zero trucks for sale and lease, genuine OEM battery solutions.">
+  <meta property="og:title" content="EVT Tech Ltd">
+  <meta property="og:description" content="The engineering team behind the Volta Zero. Now independent, operating from Horiba MIRA.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://evttech.co.uk/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Three pillar cards */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      min-height: 480px;
+    }
+    .pillar {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem 2rem;
+      min-height: 440px;
+      text-decoration: none;
+    }
+    .pillar-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s ease;
+    }
+    .pillar:hover .pillar-img { transform: scale(1.04); }
+    .pillar-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,16,36,0.95) 0%, rgba(8,16,36,0.5) 55%, rgba(8,16,36,0.25) 100%);
+      transition: background 0.4s ease;
+    }
+    .pillar:hover .pillar-overlay {
+      background: linear-gradient(to top, rgba(8,16,36,0.98) 0%, rgba(8,16,36,0.6) 55%, rgba(8,16,36,0.3) 100%);
+    }
+    .pillar-content { position: relative; z-index: 1; }
+    .pillar-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 2.2vw, 2.3rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+    .pillar-desc {
+      font-size: 0.875rem;
+      color: rgba(245,243,240,0.6);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .pillar-divider {
+      width: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+    @media (max-width: 900px) {
+      .pillars { grid-template-columns: 1fr; }
+      .pillar-divider { display: none; }
+      .pillar { min-height: 360px; }
+    }
+
+    /* Stats strip */
+    .stats-strip {
+      background: var(--navy);
+      padding: 3.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .stats-inner {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .strip-stat { text-align: center; padding: 0.5rem 1.5rem; }
+    .strip-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .strip-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(245,243,240,0.4);
+      margin-top: 0.4rem;
+      display: block;
+    }
+
+    /* Origin / who we are */
+    .origin-section {
+      background: var(--snow);
+      padding: 5.5rem 0;
+    }
+    .origin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .origin-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.13);
+    }
+    .origin-content { display: flex; flex-direction: column; gap: 1.25rem; }
+    .origin-note {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.7;
+      border-left: 3px solid var(--gold);
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 900px) {
+      .origin-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="EVT Tech Ltd home">
+        <span class="logo-evt">EVT</span><span class="logo-tech">TECH</span><span class="logo-ltd">LTD</span>
+      </a>
+      <ul class="nav-links" id="navLinks" role="menubar">
+        <li role="none"><a href="vehicles.html" role="menuitem">Vehicles</a></li>
+        <li role="none"><a href="engineering.html" role="menuitem">Engineering</a></li>
+        <li role="none"><a href="battery.html" role="menuitem">Battery</a></li>
+        <li role="none"><a href="#contact" class="nav-cta" role="menuitem">Contact Us</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top" aria-label="EVT Tech Ltd">
+    <div class="hero-media" aria-hidden="true">
+      <img src="img/EVT_Fleet.jpg" alt="" class="hero-img">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="container">
+        <p class="hero-eyebrow">Horiba MIRA &middot; Nuneaton, CV10 0TU</p>
+        <h1 class="hero-title">
+          The engineering<br>
+          team behind<br>
+          the Volta Zero.
+        </h1>
+        <p class="hero-sub">Vehicle testing &amp; development consultancy. Volta Zero trucks for sale, lease &amp; rental. Genuine OEM battery solutions.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="arrow-link arrow-link--hero">
+            <span class="arrow-link-label">Get in touch</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+          <a href="#what-we-do" class="arrow-link arrow-link--hero arrow-link--ghost">
+            <span class="arrow-link-label">What we do</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+          <a href="#who-we-are" class="arrow-link arrow-link--hero arrow-link--ghost">
+            <span class="arrow-link-label">Who we are</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bar" aria-label="Key figures">
+      <div class="container">
+        <dl class="hero-stats">
+          <div class="hstat"><dt class="hstat-label">Base</dt><dd class="hstat-value">Horiba MIRA</dd></div>
+          <div class="hstat"><dt class="hstat-label">Fleet</dt><dd class="hstat-value">20 trucks</dd></div>
+          <div class="hstat"><dt class="hstat-label">Battery stock</dt><dd class="hstat-value">~3.5 MWhr</dd></div>
+          <div class="hstat"><dt class="hstat-label">Instrumentation</dt><dd class="hstat-value">Owned in-house</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section id="what-we-do" aria-label="What we do">
+    <div class="pillars">
+
+      <a href="vehicles.html" class="pillar">
+        <img src="img/volta-front.jpg" alt="Volta Zero electric truck" class="pillar-img">
+        <div class="pillar-overlay" aria-hidden="true"></div>
+        <div class="pillar-content">
+          <span class="pillar-tag">Vehicles</span>
+          <span class="pillar-title">Volta Zero trucks.<br>For sale, lease<br>&amp; rental.</span>
+          <p class="pillar-desc">20 trucks in our fleet. Seven registered and ready to drive away. Supplied by the OEM engineering team with full support from Horiba MIRA.</p>
+        </div>
+      </a>
+
+      <div class="pillar-divider" aria-hidden="true"></div>
+
+      <a href="engineering.html" class="pillar">
+        <img src="img/engineering.jpg" alt="Automotive engineering at Horiba MIRA" class="pillar-img">
+        <div class="pillar-overlay" aria-hidden="true"></div>
+        <div class="pillar-content">
+          <span class="pillar-tag">Engineering</span>
+          <span class="pillar-title">World-class vehicle testing &amp; development.</span>
+          <p class="pillar-desc">Full-spectrum consultancy at Europe&rsquo;s most comprehensive test facility. RLDA, NVH, durability, EV powertrain, HIL &mdash; with owned instrumentation.</p>
+        </div>
+      </a>
+
+      <div class="pillar-divider" aria-hidden="true"></div>
+
+      <a href="battery.html" class="pillar">
+        <img src="img/Battery_Packs.jpg" alt="Volta Zero battery modules" class="pillar-img">
+        <div class="pillar-overlay" aria-hidden="true"></div>
+        <div class="pillar-content">
+          <span class="pillar-tag">Battery Solutions</span>
+          <span class="pillar-title">~3.5 MWhr of genuine Volta battery stock.</span>
+          <p class="pillar-desc">OEM modules with full traceability, recovered from 17 trucks dismantled by our own engineers. Available for second-life, replacement supply and off-grid projects.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip" aria-label="Key figures">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="strip-stat">
+          <span class="strip-num">39</span>
+          <span class="strip-label">Volta Zero trucks acquired</span>
+        </div>
+        <div class="strip-stat">
+          <span class="strip-num">20</span>
+          <span class="strip-label">Trucks in current fleet</span>
+        </div>
+        <div class="strip-stat">
+          <span class="strip-num">~3.5</span>
+          <span class="strip-label">MWhr battery stock</span>
+        </div>
+        <div class="strip-stat">
+          <span class="strip-num">17</span>
+          <span class="strip-label">Trucks dismantled in-house</span>
+        </div>
+        <div class="strip-stat">
+          <span class="strip-num">MIRA</span>
+          <span class="strip-label">Europe&rsquo;s premier test facility</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="origin-section" id="who-we-are" aria-label="About EVT Tech">
+    <div class="container">
+      <div class="origin-grid">
+        <div class="fade-up">
+          <img src="img/EVT_Fleet.jpg" alt="EVT Tech fleet at Horiba MIRA" class="origin-img">
+        </div>
+        <div class="origin-content fade-up" style="--delay:0.15s">
+          <span class="tag">Who we are</span>
+          <h2 class="display-h">Built the vehicle.<br>Bought the assets.<br>Still here.</h2>
+          <p>EVT Tech Ltd is formed by the former Volta Trucks UK engineering leads &mdash; the team responsible for designing and validating the Volta Zero from 2020 through to production. When Volta Trucks ceased trading in 2023, we acquired the UK vehicle fleet, battery stock and workshop equipment and continued independently.</p>
+          <p>We operate from Horiba MIRA in Nuneaton &mdash; one of Europe&rsquo;s most comprehensive automotive test facilities &mdash; with full workshop capability, owned instrumentation and the deepest possible knowledge of the Volta Zero platform.</p>
+          <p class="origin-note">Volta Trucks ceased trading in 2023. EVT Tech acquired the UK assets directly and operates as an independent company. Our engineers built and validated the vehicle &mdash; that knowledge remains with us.</p>
+          <a href="#contact" class="arrow-link">
+            <span class="arrow-link-label">Discuss what we can do for you</span>
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left fade-up">
+          <span class="tag tag--light">Get in touch</span>
+          <h2 class="display-h display-h--light">Tell us about your project.</h2>
+          <p class="contact-sub">Whether you&rsquo;re looking for engineering support, a Volta Zero for your fleet, or battery modules for a second-life project &mdash; speak directly with the team that built the vehicle.</p>
+        </div>
+        <div class="contact-right fade-up" style="--delay:0.15s">
+          <div class="contact-details">
+            <div class="cdetail">
+              <span class="cdetail-label">Location</span>
+              <span class="cdetail-value">Horiba MIRA, Nuneaton<br>CV10 0TU, UK</span>
+            </div>
+            <div class="cdetail">
+              <span class="cdetail-label">Email</span>
+              <a href="mailto:info@evttech.co.uk" class="cdetail-value cdetail-link">info@evttech.co.uk</a>
+            </div>
+            <div class="cdetail">
+              <span class="cdetail-label">Web</span>
+              <a href="https://evttech.co.uk" class="cdetail-value cdetail-link">evttech.co.uk</a>
+            </div>
+          </div>
+          <a href="mailto:info@evttech.co.uk" class="btn-outline">
+            Send us an email
+            <span class="arrow-circ" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="nav-logo footer-brand" aria-label="EVT Tech Ltd home">
+          <span class="logo-evt">EVT</span><span class="logo-tech">TECH</span><span class="logo-ltd">LTD</span>
+        </a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="vehicles.html">Vehicles</a>
+          <a href="engineering.html">Engineering</a>
+          <a href="battery.html">Battery Solutions</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-addr">Horiba MIRA &middot; Nuneaton &middot; CV10 0TU &middot; United Kingdom</p>
+        <p class="footer-copy">&copy; 2026 EVT Tech Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
